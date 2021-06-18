@@ -1,5 +1,6 @@
 #include "planck.h"
 #include "action_layer.h"
+#include "su-stefan.h"
 
 extern keymap_config_t keymap_config;
 
