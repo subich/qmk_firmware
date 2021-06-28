@@ -12,12 +12,10 @@ extern rgblight_config_t rgblight_config;
 static uint32_t oled_timer = 0;
 #endif
 
-// Each layer gets a name for readability, which is then used in the keymap matrix below.
-// The underscores don't mean anything - you can have a layer called STUFF or any other name.
-// Layer names don't all need to be of the same length, obviously, and you can also skip them
-// entirely and just use numbers.
+// Each layer gets a name for readability
 enum layers {
   _QWERTY,
+  _COLEMAK,
   _LOWER,
   _RAISE,
   _ADJUST
@@ -29,6 +27,7 @@ enum layers {
 
 enum custom_keycodes {
   QWERTY = SAFE_RANGE,
+  COLEMAK,
   LOWER,
   RAISE,
   ADJUST,
@@ -36,55 +35,47 @@ enum custom_keycodes {
   KC_RACL // right alt / colon
 };
 
+// clang-format off
+#define LAYOUT_split_3x6_3_wrapper(...)      LAYOUT_split_3x6_3(__VA_ARGS__)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [_QWERTY] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------.                ,---------------------------------------------.
-     KC_TAB,  KC_Q,  KC_W,  KC_E,  KC_R,  KC_T,                   KC_Y,  KC_U,  KC_I,  KC_O,  KC_P,  KC_BSPC,
-  //|------+------+------+------+------+------|                |------+------+-------+------+-------+--------|
-    KC_LCTL,  KC_A,  KC_S,  KC_D,  KC_F,  KC_G,                   KC_H,  KC_J,  KC_K,  KC_L, KC_SCLN,KC_QUOT,
-  //|------+------+------+------+------+------|                |------+------+-------+------+-------+--------|
-    KC_LSPO,  KC_Z,  KC_X,  KC_C,  KC_V,  KC_B,                   KC_N,  KC_M,KC_COMM,KC_DOT,KC_SLSH,KC_RSPC,
-  //|------+------+------+------+------+------+------|  |------+------+------+-------+------+-------+--------|
-                               KC_LGESC,LOWER, KC_SPC,   RCTL_T(KC_ENT), RAISE, KC_RACL
-                              //`--------------------'  `--------------------'
+  [_QWERTY]  = LAYOUT_split_3x6_3_wrapper(
+    KC_TAB,  _________________QWERTY_L1_________________,                    _________________QWERTY_R1_________________, _______,
+    _______, _________________QWERTY_L2_________________,                    _________________QWERTY_R2_________________, KC_QUOT,
+    _______, _________________QWERTY_L3_________________,                    _________________QWERTY_R3_________________, _______,
+                                     _______, LOWER,   _______,        _______, RAISE,   _______
   ),
 
-  [_LOWER] = LAYOUT_split_3x6_3(
-  //,---------------------------------------------.                ,-----------------------------------------.
-     KC_ESC,  KC_1, KC_2,   KC_3,   KC_4,   KC_5,                    KC_6,  KC_7,  KC_8,  KC_9,  KC_0, KC_DEL,
-  //|------+------+-------+-------+-------+-------|                |------+------+------+------+------+------|
-    KC_LCTL, KC_NO,KC_MS_L,KC_MS_D,KC_MS_U,KC_MS_R,                KC_LEFT,KC_DOWN,KC_UP,KC_RIGHT,KC_NO,KC_NO,
-  //|------+------+-------+-------+-------+-------|                |------+------+------+------+------+------|
-    KC_LSFT, KC_NO,KC_BTN2,KC_WH_D,KC_WH_U,KC_BTN1,                KC_HOME,KC_PGDN,KC_PGUP,KC_END,KC_NO,KC_NO,
-  //|------+------+-------+-------+-------+-------+------|  |------+------+------+------+------+------+------|
-                                    KC_LGUI, LOWER,KC_SPC,   KC_ENT, RAISE,KC_RALT
-                                  //`--------------------'  `--------------------'
+  [_COLEMAK] = LAYOUT_split_3x6_3_wrapper(
+    KC_TAB,  _________________COLEMAK_L1________________,                    _________________COLEMAK_R1________________, _______,
+    _______, _________________COLEMAK_L2________________,                    _________________COLEMAK_R2________________, KC_QUOT,
+    _______, _________________COLEMAK_L3________________,                    _________________COLEMAK_R3________________, _______,
+                                     _______, LOWER,   _______,        _______, RAISE,   _______
   ),
 
-  [_RAISE] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------.                ,-----------------------------------------.
-     KC_ESC,KC_EXLM,KC_AT,KC_HASH,KC_DLR,KC_PERC,              KC_CIRC,KC_AMPR,KC_ASTR,KC_LPRN,KC_RPRN,KC_BSPC,
-  //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    KC_LCTL, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,                KC_MINS,KC_EQL,KC_LCBR,KC_RCBR,KC_PIPE,KC_GRV,
-  //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    KC_LSFT, KC_F6, KC_F7, KC_F8, KC_F9,KC_F10,                KC_UNDS,KC_PLUS,KC_LBRC,KC_RBRC,KC_BSLS,KC_TILD,
-  //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                KC_LGUI, LOWER,KC_SPC,   KC_ENT, RAISE,KC_RALT
-                              //`--------------------'  `--------------------'
+
+  [_LOWER]   = LAYOUT_split_3x6_3_wrapper(
+    KC_F11,  _________________LOWER_L1__________________,                    _________________LOWER_R1__________________, KC_F11,
+    KC_F12,  _________________LOWER_L2__________________,                    _________________LOWER_R2__________________, KC_PIPE,
+    _______, _________________LOWER_L3__________________,                    _________________LOWER_R3__________________, _______,
+                                     _______, _______, _______,        _______, _______, _______
   ),
 
-  [_ADJUST] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------.                ,-----------------------------------------.
-      RESET,RGBRST, KC_NO, KC_NO, KC_NO, KC_NO,                  KC_NO,KC__MUTE, KC_NO, KC_NO, KC_NO, KC_NO,
-  //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    RGB_TOG,RGB_HUI,RGB_SAI,RGB_VAI,RGB_SPI,KC_NO,               KC_PAUSE,KC__VOLUP, KC_NO, KC_NO, KC_NO, KC_NO,
-  //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    RGB_MOD,RGB_HUD,RGB_SAD,RGB_VAD,RGB_SPD,KC_NO,               KC_SCROLLLOCK,KC__VOLDOWN, KC_NO, KC_NO, KC_NO, RGB_RMOD,
-  //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                KC_LGUI, LOWER,KC_SPC,   KC_ENT, RAISE,KC_RALT
-                              //`--------------------'  `--------------------'
+  [_RAISE]   = LAYOUT_split_3x6_3_wrapper(
+    _______, _________________RAISE_L1__________________,                    _________________RAISE_R1__________________, _______,
+    _______, _________________RAISE_L2__________________,                    _________________RAISE_R2__________________, KC_BSLS,
+    _______, _________________RAISE_L3__________________,                    _________________RAISE_R3__________________, _______,
+                                     _______, _______, _______,        _______, _______, _______
+  ),
+
+  [_ADJUST]  = LAYOUT_split_3x6_3_wrapper(
+    KC_MAKE, _________________ADJUST_L1_________________,                    _________________ADJUST_R1_________________, KC_RESET,
+    VRSN,    _________________ADJUST_L2_________________,                    _________________ADJUST_R2_________________, EEP_RST,
+    MG_NKRO, _________________ADJUST_L3_________________,                    _________________ADJUST_R3_________________, RGB_IDL,
+                                     _______, _______, _______,        _______, _______, _______
   )
 };
+// clang-format on
 
 int RGB_current_mode;
 
