@@ -23,7 +23,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define USE_MATRIX_I2C
 
 /* Select hand configuration */
-
 #define MASTER_LEFT
 // #define MASTER_RIGHT
 // #define EE_HANDS
@@ -110,7 +109,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #   define DISABLE_RGB_MATRIX_SOLID_REACTIVE_NEXUS
 #   define DISABLE_RGB_MATRIX_SOLID_REACTIVE_MULTINEXUS
 #   define DISABLE_RGB_MATRIX_SPLASH
-// #   define DISABLE_RGB_MATRIX_MULTISPLASH
+#   define DISABLE_RGB_MATRIX_MULTISPLASH
 #   define DISABLE_RGB_MATRIX_SOLID_SPLASH
 #   define DISABLE_RGB_MATRIX_SOLID_MULTISPLASH
 #endif
