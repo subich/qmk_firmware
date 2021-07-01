@@ -8,6 +8,7 @@
 enum layers {
   _QWERTY,
   _COLEMAK,
+  _GAME,
   _LOWER,
   _RAISE,
   _ADJUST
@@ -16,6 +17,7 @@ enum layers {
 enum custom_keycodes {
   QWERTY = SAFE_RANGE,
   COLEMAK,
+  GAME,
   LOWER,
   RAISE,
   ADJUST,
