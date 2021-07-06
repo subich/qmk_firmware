@@ -1,3 +1,5 @@
+#include "su-stefan.h"
+
 static uint32_t oled_timer = 0;
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) { return OLED_ROTATION_270; }

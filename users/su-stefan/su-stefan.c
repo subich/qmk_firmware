@@ -6,7 +6,7 @@ extern rgblight_config_t rgblight_config;
 #endif
 
 #ifdef OLED_DRIVER_ENABLE
-//static uint32_t oled_timer = 0;
+static uint32_t oled_timer = 0;
 #endif
 
 int RGB_current_mode;

@@ -1,3 +1,5 @@
+#include "su-stefan.h"
+
 void suspend_power_down_keymap(void) {
     rgb_matrix_set_suspend_state(true);
 }
