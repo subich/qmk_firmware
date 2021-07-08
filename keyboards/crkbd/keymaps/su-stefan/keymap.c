@@ -9,7 +9,6 @@ extern keymap_config_t keymap_config;
 
 // clang-format off
 #define LAYOUT_split_3x6_3_wrapper(...)      LAYOUT_split_3x6_3(__VA_ARGS__)
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY]  = LAYOUT_split_3x6_3_wrapper(
     KC_TAB,  _________________QWERTY_L1_________________,                    _________________QWERTY_R1_________________, KC_BSPC,

@@ -6,19 +6,15 @@
 #include "wrappers.h"
 
 #ifdef TAP_DANCE_ENABLE
-//#    include "tap_dances.h"
 #endif  // TAP_DANCE_ENABLE
 
 #if defined(RGBLIGHT_ENABLE)
-//#    include "rgb_stuff.h"
 #endif
 
 #if defined(RGB_MATRIX_ENABLE)
-//#    include "rgb_matrix_stuff.h"
 #endif
 
 #if defined(OLED_DRIVER_ENABLE)
-//#    include "oled_stuff.h"
 #endif
 
 // Each layer gets a name for readability

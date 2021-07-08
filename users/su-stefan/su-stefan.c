@@ -66,6 +66,24 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           layer_off(_ADJUST);
         }
         return false;
+    case QWERTY:
+      if (record->event.pressed) {
+        set_single_persistent_default_layer(_QWERTY);
+      }
+      return false;
+      break;
+    case COLEMAK:
+      if (record->event.pressed) {
+        set_single_persistent_default_layer(_COLEMAK);
+      }
+      return false;
+      break;
+    case GAME:
+        if (record->event.pressed) {
+          set_single_persistent_default_layer(_GAME);
+        }
+        return false;
+        break;
     case KC_RACL:
         if (record->event.pressed) {
           my_colon_timer = timer_read();
