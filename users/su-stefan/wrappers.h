@@ -51,7 +51,7 @@
 #define _________________ADJUST_L3_________________       RGB_RMOD,RGB_HUD, RGB_SAD, RGB_VAD, ___X___
 
 #define _________________ADJUST_R1_________________       ___X___, KC_MUTE, ___X___, ___X___, ___X___
-#define _________________ADJUST_R2_________________       KC_PAUS, KC_VOLU, COLEMAK, ___X___, ___X___
+#define _________________ADJUST_R2_________________       KC_PAUS, KC_VOLU, QWERTY,  COLEMAK, GAME
 #define _________________ADJUST_R3_________________       ___X___, KC_VOLD, KC_VOLD, KC_VOLU, KC_MNXT
 
 // clang-format on
