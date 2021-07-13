@@ -12,9 +12,3 @@
 #undef SSD1306OLED
 
 #define USE_SERIAL_PD2
-
-// potential (?) fix for oled issues
-#ifdef OLED_DRIVER_ENABLE
-#    define OLED_TIMEOUT 10000
-#    define OLED_DISABLE_TIMEOUT // Prevent matrix_changed triggering oled_on()
-#endif

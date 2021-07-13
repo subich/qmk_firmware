@@ -46,11 +46,11 @@
 #define _________________RAISE_R3__________________       KC_UNDS, KC_PLUS, KC_LBRC, KC_RBRC, KC_BSLS
 
 
-#define _________________ADJUST_L1_________________       RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI, RGB_TOG
-#define _________________ADJUST_L2_________________       MU_TOG , CK_TOGG, AU_ON,   AU_OFF,  CG_NORM
-#define _________________ADJUST_L3_________________       RGB_RMOD,RGB_HUD, RGB_SAD, RGB_VAD, ___X___
+#define _________________ADJUST_L1_________________       RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI, RGB_SPI
+#define _________________ADJUST_L2_________________       RGB_TOG, CK_TOGG, AU_ON,   AU_OFF,  CG_NORM
+#define _________________ADJUST_L3_________________       RGB_RMOD,RGB_HUD, RGB_SAD, RGB_VAD, RGB_SPD
 
-#define _________________ADJUST_R1_________________       ___X___, KC_MUTE, ___X___, ___X___, ___X___
+#define _________________ADJUST_R1_________________       ___X___, KC_MUTE, ___X___, ___X___, KC_MAKE
 #define _________________ADJUST_R2_________________       KC_PAUS, KC_VOLU, QWERTY,  COLEMAK, GAME
 #define _________________ADJUST_R3_________________       ___X___, KC_VOLD, KC_VOLD, KC_VOLU, KC_MNXT
 

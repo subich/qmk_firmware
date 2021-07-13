@@ -17,7 +17,7 @@
 #    define AUDIO_CLICKY_FREQ_RANDOMNESS 1.5f
 #endif  // !AUDIO_ENABLE
 
-#if defined(RGBLIGHT_ENABLE)
+#ifdef RGBLIGHT_ENABLE
 #    undef RGBLED_NUM
 #    define RGBLED_NUM 27
 #    define RGBLIGHT_ANIMATIONS
@@ -29,7 +29,7 @@
 #    define RGBLIGHT_VAL_STEP 17
 #endif
 
-#if defined(RGB_MATRIX_ENABLE)
+#ifdef RGB_MATRIX_ENABLE
 #    define RGB_MATRIX_KEYPRESSES // reacts to keypresses
 //#    define RGB_MATRIX_KEYRELEASES // reacts to keyreleases (instead of keypresses)
 //#    define RGB_DISABLE_AFTER_TIMEOUT 0 // number of ticks to wait until disabling effects
@@ -45,10 +45,10 @@
 
 /* Disable the animations you don't want/need.  You will need to disable a good number of these    *
  * because they take up a lot of space.  Disable until you can successfully compile your firmware. */
-//#    define DISABLE_RGB_MATRIX_ALPHAS_MODS               // Static dual hue, speed is hue for secondary hue
+#    define DISABLE_RGB_MATRIX_ALPHAS_MODS               // Static dual hue, speed is hue for secondary hue
 #    define DISABLE_RGB_MATRIX_GRADIENT_UP_DOWN            // Static gradient top to bottom, speed controls how much gradient changes
 #    define DISABLE_RGB_MATRIX_GRADIENT_LEFT_RIGHT         // Static gradient left to right, speed controls how much gradient changes
-#    define DISABLE_RGB_MATRIX_BREATHING                   // Single hue brightness cycling animation
+//#    define DISABLE_RGB_MATRIX_BREATHING                   // Single hue brightness cycling animation
 //#    define DISABLE_RGB_MATRIX_BAND_SAT                  // Single hue band fading saturation scrolling left to right
 #    define DISABLE_RGB_MATRIX_BAND_VAL                    // Single hue band fading brightness scrolling left to right
 #    define DISABLE_RGB_MATRIX_BAND_PINWHEEL_SAT           // Single hue 3 blade spinning pinwheel fades saturation
@@ -72,7 +72,7 @@
 #    define DISABLE_RGB_MATRIX_HUE_PENDULUM                // Hue shifts up a slight ammount in a wave to the right, then back to the left
 #    define DISABLE_RGB_MATRIX_HUE_WAVE                    // Hue shifts up a slight ammount and then back down in a wave to the right
 //#    define DISABLE_RGB_MATRIX_TYPING_HEATMAP            // How hot is your WPM!
-//#    define DISABLE_RGB_MATRIX_DIGITAL_RAIN              // That famous computer simulation
+#    define DISABLE_RGB_MATRIX_DIGITAL_RAIN              // That famous computer simulation
 #    define DISABLE_RGB_MATRIX_SOLID_REACTIVE_SIMPLE       // Pulses keys hit to hue & value then fades value out
 #    define DISABLE_RGB_MATRIX_SOLID_REACTIVE              // Static single hue, pulses keys hit to shifted hue then fades to current hue
 #    define DISABLE_RGB_MATRIX_SOLID_REACTIVE_WIDE         // Hue & value pulse near a single key hit then fades value out
@@ -87,17 +87,18 @@
 #    define DISABLE_RGB_MATRIX_SOLID_MULTISPLASH           // Hue & value pulse away from multiple key hits then fades value out
 #endif
 
-#if defined(OLED_DRIVER_ENABLE)
-//#    ifdef SPLIT_KEYBOARD
-//#        define OLED_UPDATE_INTERVAL 60
-//#    else
-//#        define OLED_UPDATE_INTERVAL 15
-//#    endif
-//#    define OLED_DISABLE_TIMEOUT
-//#    ifdef OLED_FONT_H
-//#        undef OLED_FONT_H
-//#    endif
-#    define OLED_FONT_H "glcdfont.c"
+#ifdef OLED_DRIVER_ENABLE
+#    ifdef SPLIT_KEYBOARD
+#        define OLED_UPDATE_INTERVAL 60
+#    else
+#        define OLED_UPDATE_INTERVAL 15
+#    endif
+//#    define OLED_TIMEOUT 10000
+#    define OLED_DISABLE_TIMEOUT // potential (?) fix for oled issues
+#    ifdef OLED_FONT_H
+#        undef OLED_FONT_H
+#    endif
+#    define OLED_FONT_H "users/su-stefan/glcdfont.c"
 //#    define OLED_FONT_END 255
 //#    define OLED_FONT_5X5
 //#    define OLED_FONT_AZTECH
