@@ -3,6 +3,12 @@
 #ifdef TAP_DANCE_ENABLE
 #endif  // TAP_DANCE_ENABLE
 
+#ifdef SPLIT_KEYBOARD
+#    define SPLIT_MODS_ENABLE
+#    define SPLIT_TRANSPORT_MIRROR
+#    define SERIAL_USE_MULTI_TRANSACTION
+#endif
+
 #ifdef AUDIO_ENABLE
 #    define AUDIO_CLICKY
 #    define STARTUP_SONG SONG(RICK_ROLL)
@@ -94,7 +100,7 @@
 #        define OLED_UPDATE_INTERVAL 15
 #    endif
 //#    define OLED_TIMEOUT 10000
-#    define OLED_DISABLE_TIMEOUT // potential (?) fix for oled issues
+//#    define OLED_DISABLE_TIMEOUT // potential (?) fix for oled issues
 #    ifdef OLED_FONT_H
 #        undef OLED_FONT_H
 #    endif
