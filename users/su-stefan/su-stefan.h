@@ -1,6 +1,8 @@
 #pragma once
 #include QMK_KEYBOARD_H
 
+#include "quantum.h"
+#include "action_layer.h"
 #include "action.h"
 #include "version.h"
 #include "wrappers.h"
@@ -47,3 +49,5 @@ enum custom_keycodes {
 #define RAISE MO(_RAISE)
 
 #define CTL_ESC CTL_T(KC_ESC)
+// Dual function escape with left command
+#define KC_LGESC LGUI_T(KC_ESC)
