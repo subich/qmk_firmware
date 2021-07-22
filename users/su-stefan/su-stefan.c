@@ -23,12 +23,10 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  if (record->event.pressed) {
 #ifdef OLED_DRIVER_ENABLE
-        oled_timer = timer_read32();
-#endif
-    // set_timelog();
-  }
+  process_record_user_oled(keycode, record);
+#endif  // OLED
+
   static uint16_t my_colon_timer;
 
   switch (keycode) {

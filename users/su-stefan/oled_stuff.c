@@ -1,6 +1,6 @@
 #include "su-stefan.h"
 
-static uint32_t oled_timer = 0;
+uint32_t oled_timer = 0;
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) { return OLED_ROTATION_270; }
 
@@ -197,6 +197,15 @@ void render_status_secondary(void) {
 
 void suspend_power_down_user() {
     oled_off();
+}
+
+bool process_record_user_oled(uint16_t keycode, keyrecord_t *record) {
+    if (record->event.pressed) {
+#ifdef OLED_DRIVER_ENABLE
+        oled_timer = timer_read32();
+#endif
+    }
+    return true;
 }
 
 void oled_task_user(void) {

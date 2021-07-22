@@ -26,6 +26,7 @@
 #define _________________FUNC_RIGHT________________       KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10
 
 #define ___________________BLANK___________________       _______, _______, _______, _______, _______
+#define ____________________NO_____________________       ___X___, ___X___, ___X___, ___X___, ___X___
 
 
 #define _________________LOWER_L1__________________       ________________NUMBER_LEFT________________
@@ -38,8 +39,8 @@
 
 
 #define _________________RAISE_L1__________________       KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC
-#define _________________RAISE_L2__________________       ___________________BLANK___________________
-#define _________________RAISE_L3__________________       ___________________BLANK___________________
+#define _________________RAISE_L2__________________       ___X___, ___X___, ___X___, ___X___, ___X___
+#define _________________RAISE_L3__________________       ___X___, ___X___, ___X___, ___X___, ___X___
 
 #define _________________RAISE_R1__________________       KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN
 #define _________________RAISE_R2__________________       KC_MINS, KC_EQL,  KC_LCBR, KC_RCBR, KC_PIPE
@@ -47,7 +48,7 @@
 
 
 #define _________________ADJUST_L1_________________       RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI, RGB_SPI
-#define _________________ADJUST_L2_________________       RGB_TOG, CK_TOGG, AU_TOG,  ___X___, CG_NORM
+#define _________________ADJUST_L2_________________       RGB_TOG, CK_TOGG, AU_TOG,  ___X___, CG_TOGG
 #define _________________ADJUST_L3_________________       RGB_RMOD,RGB_HUD, RGB_SAD, RGB_VAD, RGB_SPD
 
 #define _________________ADJUST_R1_________________       KC_PAUS, KC_MUTE, ___X___, ___X___, KC_MAKE
