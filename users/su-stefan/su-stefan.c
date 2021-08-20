@@ -5,6 +5,16 @@
 extern rgblight_config_t rgblight_config;
 #endif
 
+#ifdef RGB_MATRIX_ENABLE
+void suspend_power_down_keymap(void) {
+    rgb_matrix_set_suspend_state(true);
+}
+
+void suspend_wakeup_init_keymap(void) {
+    rgb_matrix_set_suspend_state(false);
+}
+#endif
+
 int RGB_current_mode;
 
 void matrix_init_user(void) {

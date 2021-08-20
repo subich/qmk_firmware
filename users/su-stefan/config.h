@@ -99,7 +99,7 @@
 #    else
 #        define OLED_UPDATE_INTERVAL 15
 #    endif
-#    define OLED_TIMEOUT 10000
+//#    define OLED_TIMEOUT 10000
 #    define OLED_DISABLE_TIMEOUT // potential (?) fix for oled issues
 #    ifdef OLED_FONT_H
 #        undef OLED_FONT_H

@@ -4,16 +4,12 @@
 #include "quantum.h"
 #include "action_layer.h"
 #include "action.h"
+
 #include "version.h"
 #include "wrappers.h"
 
-#ifdef TAP_DANCE_ENABLE
-#endif  // TAP_DANCE_ENABLE
-
-#if defined(RGBLIGHT_ENABLE)
-#endif
-
-#if defined(RGB_MATRIX_ENABLE)
+#if defined(TAP_DANCE_ENABLE)
+#    include "tap_dances.h"
 #endif
 
 #if defined(OLED_DRIVER_ENABLE)
