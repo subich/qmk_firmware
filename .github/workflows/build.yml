@@ -1,0 +1,19 @@
+name: QMK build
+
+on:
+  push:
+    branches: [ subich_keymaps ]
+  pull_request:
+    branches: [ subich_keymaps ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make git-submodule
+      run: make git-submodule
+    - name: make all:subich
+      run: make all:subich
