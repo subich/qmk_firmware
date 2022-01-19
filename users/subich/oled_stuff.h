@@ -1,0 +1,6 @@
+#pragma once
+
+#include "oled_driver.h"
+
+bool process_record_user_oled(uint16_t keycode, keyrecord_t *record);
+extern uint32_t oled_timer;
