@@ -4,6 +4,8 @@
 #endif  // TAP_DANCE_ENABLE
 
 #ifdef SPLIT_KEYBOARD
+#    define SPLIT_OLED_ENABLE
+#    define SPLIT_LAYER_STATE_ENABLE
 #    define SPLIT_MODS_ENABLE
 #    define SPLIT_TRANSPORT_MIRROR
 #    define SERIAL_USE_MULTI_TRANSACTION
@@ -12,7 +14,7 @@
 #ifdef AUDIO_ENABLE
 #    define AUDIO_CLICKY
 #    define STARTUP_SONG SONG(PLANCK_SOUND)
-#    define GOODBYE_SONG SONG(GOODBYE_SONG)
+#    define GOODBYE_SONG SONG(GOODBYE_SOUND)
 #    define DEFAULT_LAYER_SONGS { \
                 SONG(QWERTY_SOUND), \
                 SONG(COLEMAK_SOUND), \

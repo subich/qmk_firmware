@@ -1,21 +1,21 @@
 #include "subich.h"
+#define LAYOUT_split_3x6_3_wrapper(...)      LAYOUT_split_3x6_3(__VA_ARGS__)
 
 extern keymap_config_t keymap_config;
 
 // clang-format off
-#define LAYOUT_split_3x6_3_wrapper(...)      LAYOUT_split_3x6_3(__VA_ARGS__)
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY]  = LAYOUT_split_3x6_3_wrapper(
     KC_TAB,  _________________QWERTY_L1_________________,                  _________________QWERTY_R1_________________, KC_BSPC,
     KC_LCTL, _________________QWERTY_L2_________________,                  _________________QWERTY_R2_________________, KC_QUOT,
-    KC_LSPO, _________________QWERTY_L3_________________,                  _________________QWERTY_R3_________________, KC_RSPC,
+    KC_LSFT, _________________QWERTY_L3_________________,                  _________________QWERTY_R3_________________, KC_RSFT,
                                      KC_LGESC, LOWER,  KC_SPC,      RCTL_T(KC_ENT), RAISE,   KC_RACL
   ),
  
   [_COLEMAK] = LAYOUT_split_3x6_3_wrapper(
-    KC_TAB,  _________________COLEMAK_L1________________,                  _________________COLEMAK_R1________________, KC_BSPC,
-    KC_LCTL, _________________COLEMAK_L2________________,                  _________________COLEMAK_R2________________, KC_QUOT,
-    KC_LSPO, _________________COLEMAK_L3________________,                  _________________COLEMAK_R3________________, KC_RSPC,
+    _______, _________________COLEMAK_L1________________,                  _________________COLEMAK_R1________________, _______,
+    _______, _________________COLEMAK_L2________________,                  _________________COLEMAK_R2________________, _______,
+    _______, _________________COLEMAK_L3________________,                  _________________COLEMAK_R3________________, _______,
                                      KC_LGESC, LOWER,  KC_SPC,      RCTL_T(KC_ENT), RAISE,   KC_RACL
   ),
  

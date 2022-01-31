@@ -1,15 +1,15 @@
 #include "subich.h"
+#define LAYOUT_ortho_4x12_wrapper(...) LAYOUT_ortho_4x12(__VA_ARGS__)
 
 extern keymap_config_t keymap_config;
 
 // clang-format off
-#define LAYOUT_ortho_4x12_wrapper(...) LAYOUT_ortho_4x12(__VA_ARGS__)
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_ortho_4x12_wrapper(
     KC_TAB,  _________________QWERTY_L1_________________, _________________QWERTY_R1_________________, KC_BSPC,
     CTL_ESC, _________________QWERTY_L2_________________, _________________QWERTY_R1_________________, KC_QUOT,
-    KC_LSFT, _________________QWERTY_L3_________________, _________________QWERTY_R1_________________, KC_SFTENT,
-    ___X___, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_SPC,  KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    KC_LSFT, _________________QWERTY_L3_________________, _________________QWERTY_R1_________________, KC_RSFT,
+    KC_LOCK, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_SPC,  KC_ENT,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
   ),
 
   [_COLEMAK] = LAYOUT_ortho_4x12_wrapper(
@@ -22,8 +22,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_GAME] = LAYOUT_ortho_4x12_wrapper(
     KC_1,    _________________QWERTY_L1_________________, _________________QWERTY_R1_________________, KC_BSPC,
     KC_LSFT, _________________QWERTY_L2_________________, _________________QWERTY_R1_________________, KC_QUOT,
-    KC_LCTL, _________________QWERTY_L3_________________, _________________QWERTY_R1_________________, KC_ENT,
-    KC_LALT, KC_4,    KC_3,    KC_2,    _______, KC_SPC,  KC_SPC,  _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    KC_LCTL, _________________QWERTY_L3_________________, _________________QWERTY_R1_________________, KC_RSFT,
+    KC_LALT, KC_4,    KC_3,    KC_2,    _______, KC_SPC,  KC_ENT,  _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
   ),
 
   [_LOWER] = LAYOUT_ortho_4x12_wrapper(

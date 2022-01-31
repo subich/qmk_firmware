@@ -41,7 +41,6 @@ enum custom_keycodes {
   NEW_SAFE_RANGE  //use "NEW_SAFE_RANGE" for keymap specific codes
 };
 
-#define _______ KC_TRNS
 #define ___X___ KC_NO
 
 #define LOWER MO(_LOWER)
