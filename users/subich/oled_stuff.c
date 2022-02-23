@@ -1,7 +1,5 @@
 #include "subich.h"
 
-uint32_t oled_timer = 0;
-
 oled_rotation_t oled_init_user(oled_rotation_t rotation) { return OLED_ROTATION_270; }
 
 void render_space(void) {
@@ -177,50 +175,17 @@ void render_layer_state(void) {
     }
 }
 
-void render_status_main(void) {
-    render_logo();
-    render_space();
-    render_layer_state();
-    render_space();
-    render_mod_status_gui_alt(get_mods()|get_oneshot_mods());
-    render_mod_status_ctrl_shift(get_mods()|get_oneshot_mods());
-}
-
-void render_status_secondary(void) {
-    render_logo();
-    render_space();
-    render_layer_state();
-    render_space();
-    render_mod_status_gui_alt(get_mods()|get_oneshot_mods());
-    render_mod_status_ctrl_shift(get_mods()|get_oneshot_mods());
-}
-
-void suspend_power_down_user() {
-    oled_off();
-}
-
 bool process_record_user_oled(uint16_t keycode, keyrecord_t *record) {
-    if (record->event.pressed) {
-#ifdef OLED_ENABLE
-        oled_timer = timer_read32();
-#endif
-    }
     return true;
 }
 
 bool oled_task_user(void) {
-    /*if (timer_elapsed32(oled_timer) > 30000) {*/
-        /*oled_off();*/
-        /*return false;*/
-    /*}*/
-/*#ifndef SPLIT_KEYBOARD*/
-    /*else { oled_on(); }*/
-/*#endif*/
+    render_logo();
+    render_space();
+    render_layer_state();
+    render_space();
+    render_mod_status_gui_alt(get_mods()|get_oneshot_mods());
+    render_mod_status_ctrl_shift(get_mods()|get_oneshot_mods());
 
-    if (is_keyboard_master()) {
-        render_status_main();  // Renders the current keyboard state (layer, lock, caps, scroll, etc)
-    } else {
-        render_status_secondary();
-    }
     return false;
 }

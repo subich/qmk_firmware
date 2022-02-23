@@ -4,8 +4,8 @@
 #endif  // TAP_DANCE_ENABLE
 
 #ifdef SPLIT_KEYBOARD
-#    define SPLIT_OLED_ENABLE
 #    define SPLIT_LAYER_STATE_ENABLE
+#    define SPLIT_LED_STATE_ENABLE
 #    define SPLIT_MODS_ENABLE
 #    define SPLIT_TRANSPORT_MIRROR
 #    define SERIAL_USE_MULTI_TRANSACTION
@@ -101,12 +101,12 @@
 
 #ifdef OLED_ENABLE
 #    ifdef SPLIT_KEYBOARD
+#        define SPLIT_OLED_ENABLE
 #        define OLED_UPDATE_INTERVAL 60
 #    else
 #        define OLED_UPDATE_INTERVAL 15
 #    endif
 #    define OLED_TIMEOUT 10000
-//#    define OLED_DISABLE_TIMEOUT // potential (?) fix for oled issues
 #    ifdef OLED_FONT_H
 #        undef OLED_FONT_H
 #    endif

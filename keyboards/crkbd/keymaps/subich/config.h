@@ -8,9 +8,6 @@
 #endif
 #define USE_SERIAL_PD2
 
-#define SPLIT_LAYER_STATE_ENABLE
-#define SPLIT_MODS_ENABLE
-#define SPLIT_OLED_ENABLE
 // #define SSD1306OLED
 // #undef SSD1306OLED
 
