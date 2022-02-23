@@ -53,19 +53,10 @@
 
 /****** Adjust (both layer holds) ********************************************************************/
 #define _________________ADJUST_L1_________________       RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI, RGB_SPI
-#define _________________ADJUST_L2_________________       RGB_TOG, CK_TOGG, AU_TOG,  ___X___, CG_TOGG
+#define _________________ADJUST_L2_________________       RGB_M_P, ___X___, ___X___, RGB_TOG, AU_TOG
 #define _________________ADJUST_L3_________________       RGB_RMOD,RGB_HUD, RGB_SAD, RGB_VAD, RGB_SPD
 
 #define _________________ADJUST_R1_________________       KC_PAUS, KC_MUTE, ___X___, ___X___, KC_MAKE
 #define _________________ADJUST_R2_________________       KC_MNXT, KC_VOLU, QWERTY,  COLEMAK, GAME
 #define _________________ADJUST_R3_________________       KC_MPRV, KC_VOLD, ___X___, ___X___, ___X___
-
-/****** Game layer ***********************************************************************************/
-#define __________________GAME_L1__________________       KC_Q,    KC_W,    KC_E,    KC_R,    KC_T
-#define __________________GAME_L2__________________       KC_A,    KC_S,    KC_D,    KC_F,    KC_G
-#define __________________GAME_L3__________________       KC_Z,    KC_X,    KC_C,    KC_V,    KC_B
-
-#define __________________GAME_R1__________________       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P
-#define __________________GAME_R2__________________       KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN
-#define __________________GAME_R3__________________       KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH
 // clang-format on
