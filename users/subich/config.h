@@ -1,8 +1,5 @@
 #pragma once
 
-#ifdef TAP_DANCE_ENABLE
-#endif  // TAP_DANCE_ENABLE
-
 #ifdef SPLIT_KEYBOARD
 #    define SPLIT_LAYER_STATE_ENABLE
 #    define SPLIT_LED_STATE_ENABLE

@@ -13,9 +13,6 @@ RGBLIGHT_ENABLE    ?= no
 RGB_MATRIX_ENABLE  ?= no
 OLED_ENABLE        ?= no
 
-ifeq ($(strip $(TAP_DANCE_ENABLE)), yes)
-	SRC += tap_dances.c
-endif
 ifeq ($(strip $(OLED_ENABLE)), yes)
 	SRC += oled_stuff.c
 endif

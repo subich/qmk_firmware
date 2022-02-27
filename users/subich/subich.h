@@ -8,10 +8,6 @@
 #include "version.h"
 #include "wrappers.h"
 
-#ifdef TAP_DANCE_ENABLE
-#    include "tap_dances.h"
-#endif
-
 #ifdef OLED_ENABLE
 #    include "oled_stuff.h"
 #endif
@@ -38,7 +34,7 @@ enum custom_keycodes {
   RGBRST,
   KC_RACL,        // right alt / colon
   KC_MAKE,        // qmk make command
-  NEW_SAFE_RANGE  //use "NEW_SAFE_RANGE" for keymap specific codes
+  NEW_SAFE_RANGE  // use "NEW_SAFE_RANGE" for keymap specific codes
 };
 
 #define ___X___ KC_NO
