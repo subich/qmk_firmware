@@ -45,3 +45,12 @@ enum custom_keycodes {
 #define CTL_ESC CTL_T(KC_ESC)
 // Dual function escape with left command
 #define KC_LGESC LGUI_T(KC_ESC)
+
+// macros for Amethyst.app
+// eventually these will be custom keycodes so they no-op on windows
+#define LYTFWD  LOPT(LSFT(KC_SPACE))
+#define LYTBCK  LCTL(LOPT(LSFT(KC_SPACE)))
+#define WNDFCCW LOPT(LSFT(KC_J))
+#define WNDFCW  LOPT(LSFT(KC_K))
+#define WNDMCCW LCTL(LOPT(LSFT(KC_J)))
+#define WNDMCW  LCTL(LOPT(LSFT(KC_K)))
